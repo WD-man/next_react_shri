@@ -1,0 +1,5 @@
+.Text_alignH_left {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}

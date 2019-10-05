@@ -1,0 +1,5 @@
+.Text_alignH_right {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}

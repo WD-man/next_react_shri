@@ -1,0 +1,21 @@
+
+.Header {
+  display: flex;
+  align-items: center;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+.Header-Logo {
+  margin-right: 40px;
+}
+
+.Header-Search {
+  margin-left: auto;
+}
+
+.Header-ChooseRepo {
+  margin-right: 40px;
+}

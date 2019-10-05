@@ -1,0 +1,111 @@
+.Table {
+  display: table;
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 650px;
+}
+
+.TableRow {
+  display: table-row;
+  padding-left: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.Table-Column {
+  display: table-column;
+}
+
+.Table-Item {
+  display: table-cell;
+}
+
+.TableHeader {
+  display: table-header-group;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Table-Footer {
+  display: table-footer-group;
+}
+
+.TableContent {
+  display: table-row-group;
+
+  position: relative;
+}
+
+.TableName {
+  position: relative;
+  padding-left: 20px;
+}
+
+.TableHash {
+  color: var(--text-color-link);
+
+  margin-right: var(--space-xs);
+}
+
+.TableMessage {
+  white-space: nowrap;
+  display: block;
+  margin-right: 100%;
+}
+
+.Test {
+  display: block;
+}
+
+.TableCommitter {
+  margin-right: 4px;
+}
+
+.TableLink {
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: block;
+  width: 50px;
+  height: 100%;
+
+  //background: url("./content/table/img/link_arrow.svg") no-repeat right center;
+}
+
+.Table_view_short {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: var(--space-xxs);
+
+  & .TableItem {
+    margin: 0;
+  }
+
+  & .TableRow {
+    width: 160px;
+    margin-top: var(--space-xs);
+    padding-left: var(--space-m);
+
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+}
+
+.TableRow_time_old {
+  border-bottom: 2px solid var(--border-color-gray);
+}
+
+.TableRow_time_recent {
+  border-bottom: 2px solid var(--border-color-purple);
+}
+

@@ -1,0 +1,26 @@
+@import "./__dir-list/__dir-list.css";
+
+.repository {
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.repository__list-wrapper {
+  width: 100%;
+}
+
+.repository__list_status_invisible {
+  display: none;
+}
+
+.repository__list_status_visible {
+}
+
+.repository__branch-name {
+  margin-right: 100%;
+}
+
+.repository__updated {
+
+}

@@ -1,0 +1,19 @@
+:root {
+  --text-color-primary: #000000;
+  --text-color-secondary: #7F8285;
+  --text-color-ghost: #B8BEC3;
+  --text-color-link: #1774E9;
+  --text-color-thirty: #434445;
+
+  --bg-color-common: #fff;
+  --bg-color-accent: #4F4F4F;
+
+  --accent-color: #FF3029;
+  --color-gray: #E5E5E5;
+  --color-gray-ghost: #F5F5F5;
+
+  --border-color-common: var(--color-gray);
+  --border-color-light: #F0F2F3;
+  --border-color-purple: #9A77FF;
+  --border-color-gray: #B8BEC3;
+}

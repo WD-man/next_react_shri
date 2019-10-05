@@ -1,0 +1,14 @@
+.TabBar  {
+  display: flex;
+}
+
+.TabBar-Item {
+  display: block;
+  margin-right: var(--space-xxl);
+
+  cursor: pointer;
+}
+
+.TabBar-Item_state_current {
+  cursor: auto;
+}

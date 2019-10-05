@@ -1,0 +1,63 @@
+.ChooseRepo {
+  position: relative;
+
+  min-height: 15px;
+
+  cursor: pointer;
+}
+
+.ChooseRepo-Header {
+}
+
+.ChooseRepo-Header::before {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+  background: url('./img/arrow.svg') no-repeat center;
+
+  border-radius: 20px;
+
+  transition: all 0.2s;
+}
+
+.ChooseRepo-Title {
+  margin-right: 10px;
+}
+
+.ChooseRepo-List {
+  position: absolute;
+  top: 107%;
+
+  display: none;
+  min-width: 264px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  /*position: absolute;*/
+  /*left: 0;*/
+  /*top: 0;*/
+}
+
+.ChooseRepo-Link {
+  display: block;
+}
+
+.ChooseRepo-Item:hover {
+  background: var(--color-gray-ghost);
+  cursor: pointer;
+}
+
+.ChooseRepo_state_open  {
+  & .ChooseRepo-List {
+    display: block;
+  }
+
+  & .ChooseRepo-Header::before {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

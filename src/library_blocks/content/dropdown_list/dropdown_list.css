@@ -1,0 +1,47 @@
+.DropdownList {
+  display: block;
+
+  margin: 0;
+
+  list-style: none;
+}
+
+.DropdownList-HeadWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.DropdownList-Title {
+  margin-right: 5px;
+}
+
+.DropdownList-Item {
+  display: none;
+}
+
+.DropdownList-CurrentItem {
+  display: none;
+}
+
+.DropdownList-Link {
+  text-decoration: none;
+  color: inherit;
+  /*color: var(--text-color-primary);*/
+}
+
+.DropdownList_state_active {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.DropdownList_state_active .DropdownList-item {
+  display: block;
+}
+
+.DropdownList_state_active .DropdownList-CurrentItem {
+  display: block;
+}
+
+.DropdownList_state_active::after {
+  transform: scaleY(-1);
+}
