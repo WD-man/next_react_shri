@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { getStaff, getRepos } from '../store/actions';
 
 import Header from '../components/common_blocks/header/header';
+import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs';
 
 const Directory = () => {
   const staff = useSelector(state => state.staff);
@@ -19,6 +20,9 @@ const Directory = () => {
   return (
     <section className="directory">
       <Header current={name} repos={repos} />
+      <div className="Section_spaceH_xxl">
+        <BreadCrumbs />
+      </div>
       {staffList(staff)}
     </section>
   );

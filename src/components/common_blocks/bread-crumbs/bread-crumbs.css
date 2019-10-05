@@ -1,12 +1,12 @@
-.bread-crumbs {
+.BreadCrumbs {
 }
 
-.bread-crumbs__crumb {
+.BreadCrumbs-Crumb {
   text-decoration: none;
 
   cursor: pointer;
 }
 
-.bread-crumbs__crumb_state_current {
+.BreadCrumbs-Crumb_state_current {
   cursor: auto;
 }
