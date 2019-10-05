@@ -1,0 +1,46 @@
+{
+  "name": "next_front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "next build",
+    "dev": "cross-env NODE_ENV=development cross-env DEBUG='server:*, app:*, error:*' nodemon ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "6.0.3",
+    "eslint": "6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.3.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.15.1",
+    "eslint-plugin-react-hooks": "2.1.2",
+    "husky": "3.0.8",
+    "lint-staged": "9.4.1",
+    "nodemon": "1.19.3",
+    "prettier": "1.18.2"
+  },
+  "dependencies": {
+    "axios": "0.19.0",
+    "body-parser": "1.19.0",
+    "commander": "3.0.2",
+    "debug": "4.1.1",
+    "express": "4.17.1",
+    "isomorphic-unfetch": "3.0.0",
+    "next": "9.0.7",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "react-redux": "7.1.1",
+    "redux": "4.0.4",
+    "redux-devtools-extension": "2.13.8",
+    "redux-thunk": "2.3.0",
+    "seamless-immutable": "7.1.4",
+    "url-parse": "1.4.7"
+  }
+}
