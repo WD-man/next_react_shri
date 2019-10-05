@@ -13,6 +13,7 @@ module.exports = async () => {
   const expressApp = express();
 
   expressApp.get('/api/repos', async (req, res) => {
+    debug('repos start');
     const {
       data: { msg },
     } = await axios.get('http://localhost:8076/api/repos');
@@ -35,7 +36,7 @@ module.exports = async () => {
     return handle(req, res);
   });
 
-  expressApp.use(function(err, req, res) {
+  expressApp.use((err, req, res) => {
     errorDebug(err.stack);
     res.status(500).send('Something broke!');
   });
