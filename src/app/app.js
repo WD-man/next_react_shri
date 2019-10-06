@@ -33,6 +33,19 @@ module.exports = async () => {
     }
   });
 
+  expressApp.get('/api/files/:id/:path', async (req, res) => {
+    const { id, path } = req.params;
+    const innerRep = path && path.split('$').join('/');
+    try {
+      const {
+        data: { msg },
+      } = await axios.get(`http://localhost:8076/api/repos/${id}/blob/master/${innerRep || ''}`);
+      res.json(msg);
+    } catch (err) {
+      res.status(500).end('error');
+    }
+  });
+
   expressApp.get('*', (req, res) => {
     return handle(req, res);
   });

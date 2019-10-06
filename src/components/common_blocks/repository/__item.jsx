@@ -36,8 +36,19 @@ const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }
   return (
     <tr className={rowClassName}>
       <td className={[itemClassname, fileNameClassNames].join(' ')}>
-        <Link href={`/directory?name=${router.query.name}&path=${constructPath()}`}>
-          <a href={`/directory?name=${router.query.name}&path=${constructPath()}`}>{file}</a>
+        <Link
+          href={`/${isDirectory ? 'directory' : 'file'}?name=${
+            router.query.name
+          }&path=${constructPath()}`}
+        >
+          <a
+            className="Repository-Link"
+            href={`/${isDirectory ? 'directory' : 'file'}?name=${
+              router.query.name
+            }&path=${constructPath()}`}
+          >
+            {file}
+          </a>
         </Link>
       </td>
       <td className="Repository-Item">

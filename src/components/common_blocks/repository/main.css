@@ -22,6 +22,7 @@
 
 .Repository-Link {
   text-decoration: none;
+  color: var(--text-color-primary);
 
   cursor: pointer;
 }
@@ -68,8 +69,9 @@
   text-align: right;
 }
 
-.Repository-Item_type_directory::before, .Repository-Item_type_file::before {
-  content: "";
+.Repository-Item_type_directory::before,
+.Repository-Item_type_file::before {
+  content: '';
   position: absolute;
   left: 8px;
   top: 50%;
@@ -80,9 +82,9 @@
 }
 
 .Repository-Item_type_directory::before {
-  background: url("./img/folder.svg") no-repeat center;
+  background: url('./img/folder.svg') no-repeat center;
 }
 
 .Repository-Item_type_file::before {
-  background: url("./img/file-icon.svg") no-repeat left center;
+  background: url('./img/file-icon.svg') no-repeat left center;
 }

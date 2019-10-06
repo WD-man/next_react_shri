@@ -1,7 +1,8 @@
-.file {
+.File {
+  margin-top: 20px;
 }
 
-.file__header {
+.File-Header {
   display: flex;
   justify-content: flex-start;
 
@@ -9,29 +10,32 @@
   border-radius: 5px 5px 0 0;
 }
 
-.file__name {
+.File-Name {
   position: relative;
 
   padding-left: 17px;
   margin-right: var(--space-xxs);
-
 }
 
-.file__name::before {
+.File-Name::before {
    content: "";
 
    position: absolute;
    left: 0;
-   top: -1px;
+   top: -2px;
 
    width: 9px;
    height: 20px;
-   //background: url("./common_blocks/file/img/file-icon.svg") no-repeat center;
+   background: url("./img/file-icon.svg") no-repeat center;
  }
 
-.file__code-section {
+.File-CodeSection {
   padding-left: var(--space-m);
   padding-top: var(--space-xs);
 
-  overflow: scroll;
+  overflow-x: auto;
+}
+
+.File-Size {
+  margin-left: 8px;
 }
