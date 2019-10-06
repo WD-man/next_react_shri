@@ -17,9 +17,9 @@ const Directory = () => {
   const { name, path = '' } = router.query;
 
   return (
-    <section className="directory">
+    <section className="Directory Page">
       <Header current={name} repos={repos} />
-      <div className="Section_spaceH_xxl">
+      <div className="Page-Content Section_spaceH_xxl">
         <BreadCrumbs isDirectory path={path.split('$')} name={name} />
         <ChooseBranch name={name} />
         <TabList active="files" tabs={['files', 'branches']} />

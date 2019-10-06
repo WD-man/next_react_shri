@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "hermione": "npx hermione gui ./test/hermione/hermione.test.js",
+    "start": "cross-env NODE_ENV=production npm run build &&  cross-env DEBUG='server:*' cross-env NODE_ENV=production node ./src/server.js",
     "build": "next build",
     "lint": "eslint --debug ./",
     "dev": "cross-env NODE_ENV=development cross-env DEBUG='server:*, app:*, error:*' nodemon ./src/server.js"
@@ -41,6 +42,8 @@
     "debug": "4.1.1",
     "emit-file-loader": "0.0.2",
     "express": "4.17.1",
+    "hermione": "2.12.6",
+    "html-reporter": "4.13.1",
     "isomorphic-unfetch": "3.0.0",
     "next": "9.0.8-canary.4",
     "next-images": "1.2.0",

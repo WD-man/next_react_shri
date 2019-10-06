@@ -24,7 +24,10 @@ const File = ({ blob, name }) => {
     <div className={fileClasses}>
       <header className={headerClasses}>
         <div className="File-Name">
-          {name}
+          {name
+            .split('$')
+            .slice(-1)
+            .join('')}
           <span className="File-Size Text_view_ghost">{size}</span>
         </div>
       </header>

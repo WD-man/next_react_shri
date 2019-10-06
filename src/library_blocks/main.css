@@ -1,6 +1,6 @@
-@import "./theme/main.css";
-@import "./patterns/main.css";
-@import "./content/main.css";
+@import './theme/main.css';
+@import './patterns/main.css';
+@import './content/main.css';
 
 body {
   margin: 0;

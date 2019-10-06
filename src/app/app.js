@@ -46,6 +46,10 @@ module.exports = async () => {
     }
   });
 
+  expressApp.get('/', (req, res) => {
+    return nextApp.render(req, res, '/index');
+  });
+
   expressApp.get('*', (req, res) => {
     return handle(req, res);
   });

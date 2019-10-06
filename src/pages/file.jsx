@@ -21,7 +21,7 @@ const FilePage = () => {
   const { name, path } = router.query;
 
   return (
-    <section className="file">
+    <section className="File Page-Content">
       <Header current={name} repos={repos} />
       <div className="Section_spaceH_xxl">
         <BreadCrumbs isDirectory path={path.split('$')} name={name} />
