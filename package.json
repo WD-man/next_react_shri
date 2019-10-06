@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "hermione": "npx hermione gui ./test/hermione/hermione.test.js",
-    "start": "cross-env NODE_ENV=production npm run build &&  cross-env DEBUG='server:*' cross-env NODE_ENV=production node ./src/server.js",
-    "build": "next build",
+    "start": "cross-env PORT=PORT cross-env DEBUG='server:*' cross-env NODE_ENV=production node ./src/server.js",
+    "build": "cross-env NODE_ENV=production next build",
     "lint": "eslint --debug ./",
     "dev": "cross-env NODE_ENV=development cross-env DEBUG='server:*, app:*, error:*' nodemon ./src/server.js"
   },
