@@ -31,9 +31,9 @@ const ChooseBranch = ({ name, currentBranch }) => {
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div onClick={click} className={headerClassNames}>
         <span className="ChooseBranch-Title">{name}</span>
-        <span className="ChooseBranch-BranchName Text_view_ghost">{currentBranch}</span>
+        <span className="ChooseBranch-BranchName Text_view_secondary">{currentBranch}</span>
+        <ul className={listClassNames}>{getBranches(Array.from({ length: 4 }))}</ul>
       </div>
-      <ul className={listClassNames}>{getBranches(Array.from({ length: 4 }))}</ul>
       <div className="ChooseBranch-Info">
         <span>
           Last commit

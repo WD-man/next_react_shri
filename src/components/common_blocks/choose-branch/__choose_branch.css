@@ -48,7 +48,7 @@
 .ChooseBranch-List {
   position: absolute;
   top: 100%;
-  left: 45px;
+  left: 35px;
 
   display: none;
   min-width: 320px;
@@ -56,16 +56,14 @@
   padding: 0;
   margin: 0;
 
-  overflow-y: auto;
-
+  background: var(--bg-color-common);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+
+  overflow-y: auto;
 }
 
 .ChooseBranch-List_state_opened {
   display: block;
-}
-
-.ChooseBranch-Item {
 }
 
 .ChooseBranch-Item:hover {
