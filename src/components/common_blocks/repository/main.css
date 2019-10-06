@@ -12,3 +12,77 @@
   margin-right: 100%;
 }
 
+.Repository-Name {
+  padding-left: 20px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.Repository-Link {
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.Repository-TableHeader {
+  white-space: nowrap;
+}
+
+.Repository-Item:not(:last-of-type) {
+  padding-right: 10px;
+}
+
+.Repository-Message {
+  //width: 150px;
+}
+
+.Repository-Date {
+  //width: 150px;
+}
+
+.Repository-Name::before {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  transform: translateY(-60%);
+
+  display: block;
+  width: 12px;
+  height: 20px;
+}
+
+.Repository-Item {
+  position: relative;
+}
+
+.Repository-Item:first-of-type {
+  padding-left: 30px;
+}
+
+.Repository-Item:last-of-type {
+  text-align: right;
+}
+
+.Repository-Item_type_directory::before, .Repository-Item_type_file::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+
+  transform: translateY(-50%);
+  width: 12px;
+  height: 20px;
+}
+
+.Repository-Item_type_directory::before {
+  background: url("./img/folder.svg") no-repeat center;
+}
+
+.Repository-Item_type_file::before {
+  background: url("./img/file-icon.svg") no-repeat left center;
+}
