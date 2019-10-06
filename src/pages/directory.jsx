@@ -7,6 +7,7 @@ import Header from '../components/common_blocks/header/header';
 import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs';
 import ChooseBranch from '../components/common_blocks/choose-branch/choose-branch';
 import TabList from '../components/common_blocks/tab-list/tab-list';
+import Repository from "../components/common_blocks/repository/repository";
 
 const Directory = () => {
   const repos = useSelector(state => state.repos);
@@ -21,6 +22,7 @@ const Directory = () => {
         <BreadCrumbs path={[name]} />
         <ChooseBranch name={name} />
         <TabList active="files" tabs={['files', 'branches']} />
+        <Repository />
       </div>
     </section>
   );

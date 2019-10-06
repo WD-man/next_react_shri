@@ -21,6 +21,21 @@
 
 .Table-Item {
   display: table-cell;
+
+  font-weight: normal;
+}
+
+.Table-Item {
+  text-align: left;
+}
+
+.Table-Item:first-of-type {
+  padding-left: 8px;
+  //text-align: left;
+}
+
+.Table-Item:last-of-type {
+  text-align: right;
 }
 
 .TableHeader {
@@ -108,4 +123,3 @@
 .TableRow_time_recent {
   border-bottom: 2px solid var(--border-color-purple);
 }
-
