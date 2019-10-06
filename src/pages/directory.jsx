@@ -30,10 +30,10 @@ const Directory = () => {
 };
 
 Directory.getInitialProps = async ({ reduxStore, query }) => {
-  const { name } = query;
+  const { name, path } = query;
 
   const { dispatch } = reduxStore;
-  await dispatch(getStaff(name));
+  await dispatch(getStaff(name, path));
   await dispatch(getRepos());
   return { platform: 'desktop' };
 };

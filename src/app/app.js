@@ -20,12 +20,13 @@ module.exports = async () => {
     res.json(msg);
   });
 
-  expressApp.get('/api/repos/:id', async (req, res) => {
-    const { id } = req.params;
+  expressApp.get('/api/repos/:id/:path?', async (req, res) => {
+    const { id, path } = req.params;
+    const innerRep = path && path.split('$').join('/');
     try {
       const {
         data: { msg },
-      } = await axios.get(`http://localhost:8076/api/repos/${id}/tree/`);
+      } = await axios.get(`http://localhost:8076/api/repos/${id}/tree/master/${innerRep || ''}`);
       res.json(msg);
     } catch (err) {
       res.status(500).end('error');

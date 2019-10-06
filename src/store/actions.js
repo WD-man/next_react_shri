@@ -18,9 +18,10 @@ export const getRepos = () => {
   };
 };
 
-export const getStaff = repo => {
+export const getStaff = (repo, path) => {
+  const url = `${repo}/${path || ''}`;
   return async dispatch => {
-    const result = await fetch(getUrl(repo));
+    const result = await fetch(getUrl(url));
     const msg = await result.json();
     dispatch({ type: actions.STAFF, payload: msg });
   };

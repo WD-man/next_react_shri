@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-// <!--    <ul class="repository__dir-row table__row section_space-v_s section_border_bottom-s section_border-color_gray">-->
-// <!--      <li class="table__item table__name repository__name section_indent-b_s repository__name_type_dir">api</li>-->
-// <!--      <li class="table__item table__hash">4febdl</li>-->
-// <!--      <li class="table__item table__message section_indent-b_s"><span class="text_view_link">ARCADIA-771:</span> append /trunk/arcadia/</li>-->
-// <!--      <li class="table__item table__committer">by Pavel,</li>-->
-// <!--      <li class="table__item table__date text_align_right">Ever and forever</li>-->
-// <!--    </ul>-->
 const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }) => {
+  const router = useRouter();
   const rowClassName = classnames(
     'Repository-DirRow',
     'Table-Row',
@@ -30,9 +26,20 @@ const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }
 
   const shortHash = hash.slice(0, 6);
 
+  const constructPath = () => {
+    if (router.query.path) {
+      return `${router.query.path}$${file}`;
+    }
+    return file;
+  };
+
   return (
     <tr className={rowClassName}>
-      <td className={[itemClassname, fileNameClassNames].join(' ')}>{file}</td>
+      <td className={[itemClassname, fileNameClassNames].join(' ')}>
+        <Link href={`/directory?name=${router.query.name}&path=${constructPath()}`}>
+          <a href={`/directory?name=${router.query.name}&path=${constructPath()}`}>{file}</a>
+        </Link>
+      </td>
       <td className="Repository-Item">
         <a className={[itemClassname, linkClassName].join(' ')} href="/">
           {shortHash}
