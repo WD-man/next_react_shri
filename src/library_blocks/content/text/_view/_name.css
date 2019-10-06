@@ -2,6 +2,6 @@
   display: inline-block;
 }
 
-.text_view_name::first-letter {
+.Text_view_name::first-letter {
   color: var(--accent-color);
 }

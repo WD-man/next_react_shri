@@ -1,6 +1,4 @@
 @import "./repository/main.css";
-@import "./bread-crumbs/bread-crumbs.css";
-@import "./choose-branch/__choose_branch.css";
 @import "./file/file.css";
 @import "./__commit-hash.css";
 @import "./footer/footer.css";

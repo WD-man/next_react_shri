@@ -1,21 +1,89 @@
-.choose-branch {
-
+.ChooseBranch {
+  position: relative;
 }
 
-.branch-item_current {
-  color: var(--text-color-ghost);
+.ChooseBranch-Header {
+  position: relative;
+
+  display: inline-block;
+  margin-bottom: 10px;
+
+  cursor: pointer;
 }
 
-.branch-list_active {
+.ChooseBranch-Header::before {
+  content: '';
 
+  position: absolute;
+  right: -20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 9px;
+  height: 12px;
+
+  background: url('./img/arrow.svg') no-repeat center;
+
+  transition: all 0.2s;
 }
 
-.branch-item_current {
-  font-size: var(--font-size-xl);
+.ChooseBranch-Header_state_opened::before {
+  transform: translateY(-50%) rotate(180deg);
 }
 
+.ChooseBranch-Title {
+  margin-right: 4px;
+}
 
-.branch-list:hover .repository__branch-item_current {
-  color: var(--text-color-primary);
-  font-size: inherit;
+.ChooseBranch-BranchName {
+}
+
+.ChooseBranch-Name {
+}
+
+.ChooseBranch-Time {
+}
+
+.ChooseBranch-List {
+  position: absolute;
+  top: 100%;
+  left: 45px;
+
+  display: none;
+  min-width: 320px;
+  max-height: 360px;
+  padding: 0;
+  margin: 0;
+
+  overflow-y: auto;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.ChooseBranch-List_state_opened {
+  display: block;
+}
+
+.ChooseBranch-Item {
+}
+
+.ChooseBranch-Item:hover {
+  background: var(--color-gray-ghost);
+}
+
+.ChooseBranch-Item_state_active,
+.ChooseBranch-Item_state_active.ChooseBranch-Item:hover {
+  & .ChooseBranch-Name {
+    color: var(--text-color-white);
+  }
+
+  & .ChooseBranch-Time {
+    color: var(--text-color-pale);
+  }
+
+  background: var(--color-accent-gray);
+}
+
+.ChooseBranch-Info {
 }

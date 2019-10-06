@@ -4,6 +4,8 @@
   --text-color-ghost: #B8BEC3;
   --text-color-link: #1774E9;
   --text-color-thirty: #434445;
+  --text-color-white: #F2F2F2;
+  --text-color-pale: #E0E0E0;
 
   --bg-color-common: #fff;
   --bg-color-accent: #4F4F4F;
@@ -11,6 +13,7 @@
   --accent-color: #FF3029;
   --color-gray: #E5E5E5;
   --color-gray-ghost: #F5F5F5;
+  --color-accent-gray: #4F4F4F;
 
   --border-color-common: var(--color-gray);
   --border-color-light: #F0F2F3;
