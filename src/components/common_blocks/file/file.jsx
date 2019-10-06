@@ -34,7 +34,7 @@ const File = ({ blob, name }) => {
 };
 
 File.propTypes = {
-  blob: PropTypes.string.isRequired,
+  blob: PropTypes.arrayOf(PropTypes.string).isRequired,
   name: PropTypes.string.isRequired,
 };
 

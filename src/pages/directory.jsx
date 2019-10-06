@@ -14,13 +14,13 @@ const Directory = () => {
   const staff = useSelector(state => state.staff);
   const router = useRouter();
 
-  const { name } = router.query;
+  const { name, path = '' } = router.query;
 
   return (
     <section className="directory">
       <Header current={name} repos={repos} />
       <div className="Section_spaceH_xxl">
-        <BreadCrumbs path={[name]} />
+        <BreadCrumbs isDirectory path={path.split('$')} name={name} />
         <ChooseBranch name={name} />
         <TabList active="files" tabs={['files', 'branches']} />
         <Repository list={staff} />

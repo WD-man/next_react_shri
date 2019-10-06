@@ -51,8 +51,8 @@ const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }
           </a>
         </Link>
       </td>
-      <td className="Repository-Item">
-        <a className={[itemClassname, linkClassName].join(' ')} href="/">
+      <td className="Repository-Item Repository-Link">
+        <a className={[itemClassname, linkClassName, ' Repository-Hash'].join(' ')} href="/">
           {shortHash}
         </a>
       </td>

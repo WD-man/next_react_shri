@@ -24,7 +24,7 @@ const FilePage = () => {
     <section className="file">
       <Header current={name} repos={repos} />
       <div className="Section_spaceH_xxl">
-        <BreadCrumbs path={[name]} />
+        <BreadCrumbs isDirectory path={path.split('$')} name={name} />
         <ChooseBranch name={name} />
         <TabList active="files" tabs={['files', 'branches']} />
         <File blob={blob} name={path} />

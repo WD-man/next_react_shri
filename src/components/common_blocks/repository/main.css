@@ -31,6 +31,10 @@
   white-space: nowrap;
 }
 
+.Repository-Hash {
+  color: var(--text-color-link);
+}
+
 .Repository-Item:not(:last-of-type) {
   padding-right: 10px;
 }

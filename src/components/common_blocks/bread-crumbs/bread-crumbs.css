@@ -2,9 +2,20 @@
 }
 
 .BreadCrumbs-Crumb {
+  position: relative;
+
+  margin-right: 10px;
+
   text-decoration: none;
 
   cursor: pointer;
+}
+
+.Repository-Crumb::after {
+  content: "/";
+  position: absolute;
+  right: -9px;
+  top: -2px;
 }
 
 .BreadCrumbs-Crumb_state_current {
