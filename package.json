@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test",
+    "test": "npm run hermione",
     "hermione": "npx hermione gui ./test/hermione/hermione.test.js",
-    "start": "cross-env PORT=PORT cross-env DEBUG='server:*' cross-env NODE_ENV=production node ./src/server.js",
+    "start": "cross-env DEBUG='server:*' cross-env NODE_ENV=production node ./src/server.js",
     "build": "cross-env NODE_ENV=production next build",
     "lint": "eslint --debug ./",
     "dev": "cross-env NODE_ENV=development cross-env DEBUG='server:*, app:*, error:*' nodemon ./src/server.js"
