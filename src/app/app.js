@@ -1,8 +1,8 @@
 const express = require('express');
 const next = require('next');
-const debug = require('debug')('app: ');
-const axios = require('axios');
 const errorDebug = require('debug')('error: ');
+
+const { getRepos, getRepoStaff, getFileStaff } = require('./server_helpers');
 
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
@@ -12,39 +12,11 @@ module.exports = async () => {
   await nextApp.prepare();
   const expressApp = express();
 
-  expressApp.get('/api/repos', async (req, res) => {
-    debug('repos start');
-    const {
-      data: { msg },
-    } = await axios.get('http://localhost:8076/api/repos');
-    res.json(msg);
-  });
+  expressApp.get('/api/repos', getRepos);
 
-  expressApp.get('/api/repos/:id/:path?', async (req, res) => {
-    const { id, path } = req.params;
-    const innerRep = path && path.split('$').join('/');
-    try {
-      const {
-        data: { msg },
-      } = await axios.get(`http://localhost:8076/api/repos/${id}/tree/master/${innerRep || ''}`);
-      res.json(msg);
-    } catch (err) {
-      res.status(500).end('error');
-    }
-  });
+  expressApp.get('/api/repos/:id/:path?', getRepoStaff);
 
-  expressApp.get('/api/files/:id/:path', async (req, res) => {
-    const { id, path } = req.params;
-    const innerRep = path && path.split('$').join('/');
-    try {
-      const {
-        data: { msg },
-      } = await axios.get(`http://localhost:8076/api/repos/${id}/blob/master/${innerRep || ''}`);
-      res.json(msg);
-    } catch (err) {
-      res.status(500).end('error');
-    }
-  });
+  expressApp.get('/api/files/:id/:path', getFileStaff);
 
   expressApp.get('/', (req, res) => {
     return nextApp.render(req, res, '/index');
