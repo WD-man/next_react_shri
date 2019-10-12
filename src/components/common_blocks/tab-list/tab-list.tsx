@@ -1,10 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const TabList = ({ tabs, active }) => {
-  const getTabs = arr => {
-    return arr.map(name => {
+interface TabListProps {
+  tabs: string[],
+  active: string
+}
+
+const TabList = ({ tabs, active }: TabListProps) => {
+  const getTabs = (arr: string[]) => {
+    return arr.map((name: string) => {
       const classNames = classnames('TabBar-Item', 'Text_transform_uppercase', 'Section_spaceV_s', {
         Section_border_bottom: name === active,
         Section_borderColor_red: name === active,
@@ -25,11 +29,6 @@ const TabList = ({ tabs, active }) => {
       </div>
     </section>
   );
-};
-
-TabList.propTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
-  active: PropTypes.string.isRequired,
 };
 
 export default TabList;
