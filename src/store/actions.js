@@ -14,9 +14,16 @@ export default actions;
 
 export const getRepos = () => {
   return async dispatch => {
-    const result = await fetch(getReposUrl());
-    const msg = await result.json();
-    dispatch({ type: actions.REPOS, payload: msg });
+    try {
+      const result = await fetch(getReposUrl());
+      const msg = await result.json();
+      dispatch({ type: actions.REPOS, payload: msg });
+    } catch (err) {
+      console.log('-------------------------');
+      console.log('err', err);
+      console.log('-------------------------');
+      dispatch({ type: actions.REPOS, payload: [] });
+    }
   };
 };
 

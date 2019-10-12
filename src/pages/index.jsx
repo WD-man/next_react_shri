@@ -17,7 +17,15 @@ const Index = () => {
     ));
   };
 
-  return createList(repos);
+  const buttonBlocks = (
+    <div>
+      {createList(repos)}
+      <a href="/api/repos/create">Создать</a><br/>
+      <a href="/api/repos/delete">Удалить</a>
+    </div>
+  );
+
+  return <div>{buttonBlocks}</div>;
 };
 
 Index.getInitialProps = async ({ reduxStore }) => {
