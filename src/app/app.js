@@ -31,9 +31,6 @@ module.exports = async () => {
 
   expressApp.get('/api/repos/delete', async (req, res) => {
     try {
-      console.log('-------------------------');
-      console.log('try delte');
-      console.log('-------------------------');
       await axios.delete('http://localhost:8076/api/repos/js');
       res.set('location', 'http://localhost:8077/');
       res.status(301);
