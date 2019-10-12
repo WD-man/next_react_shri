@@ -7,7 +7,7 @@ import Header from '../components/common_blocks/header/header.tsx';
 import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs.tsx';
 import ChooseBranch from '../components/common_blocks/choose-branch/choose-branch.tsx';
 import TabList from '../components/common_blocks/tab-list/tab-list.tsx';
-import Repository from '../components/common_blocks/repository/repository';
+import Repository from '../components/common_blocks/repository/repository.tsx';
 
 const Directory = () => {
   const repos = useSelector(state => state.repos);

@@ -1,10 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }) => {
+export interface RepositoryItemProps {
+  file: string,
+  hash: string,
+  data: string,
+  commitMessage: string,
+  author: string,
+  isDirectory: boolean,
+}
+
+
+const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }: RepositoryItemProps) => {
   const router = useRouter();
   const rowClassName = classnames(
     'Repository-DirRow',
@@ -61,15 +70,6 @@ const RepositoryItem = ({ file, hash, data, author, commitMessage, isDirectory }
       <td className="Repository-Item">{data}</td>
     </tr>
   );
-};
-
-RepositoryItem.propTypes = {
-  file: PropTypes.string.isRequired,
-  hash: PropTypes.string.isRequired,
-  data: PropTypes.string.isRequired,
-  commitMessage: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  isDirectory: PropTypes.bool.isRequired,
 };
 
 export default RepositoryItem;
