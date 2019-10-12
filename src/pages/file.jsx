@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { getBlob, getRepos } from '../store/actions';
 
-import Header from '../components/common_blocks/header/header';
+import Header from '../components/common_blocks/header/header.tsx';
 import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs';
 import ChooseBranch from '../components/common_blocks/choose-branch/choose-branch';
 import TabList from '../components/common_blocks/tab-list/tab-list';

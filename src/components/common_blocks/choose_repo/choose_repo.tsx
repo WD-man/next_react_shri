@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import './choose_repo.css';
 import Item from './__item/__item';
 
-const ChooseRepo = ({ repos, current }) => {
+export interface ChooseRepoProps {
+  repos: string[],
+  current: string
+}
+
+const ChooseRepo = ({ repos, current } : ChooseRepoProps) => {
   const [opened, setState] = useState(false);
-  const getReposList = reposArr => {
+  const getReposList = (reposArr: string[]) => {
     return reposArr.map(item => <Item key={`dir_${item}`} title={item} />);
   };
 
@@ -18,7 +22,6 @@ const ChooseRepo = ({ repos, current }) => {
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
     <nav
       role="list"
       onClick={click}
@@ -36,11 +39,6 @@ const ChooseRepo = ({ repos, current }) => {
       </ul>
     </nav>
   );
-};
-
-ChooseRepo.propTypes = {
-  repos: PropTypes.arrayOf(PropTypes.string).isRequired,
-  current: PropTypes.string.isRequired,
 };
 
 export default ChooseRepo;
