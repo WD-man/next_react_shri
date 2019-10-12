@@ -1,9 +1,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "target": "ES5",
     "noEmit": false,
     "module": "esnext",
-    "outDir": ".next/production-server/"
+    "outDir": ".next/production-server/",
+    "lib": [
+      "es2019"
+    ]
   },
   "include": ["./src/**/*.ts", "./src/**/*.js"],
   "exclude": ["test/**/*.ts"]

@@ -1,13 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import './file.css';
 
-const File = ({ blob, name }) => {
+interface FileProps {
+  blob: string,
+  name: string
+}
+
+const File = ({ blob, name }: FileProps) => {
   const fileClasses = classnames('File');
 
-  function byteCount(s) {
+  function byteCount(s: string) {
     return encodeURI(s).split(/%..|./).length - 1;
   }
 
@@ -34,11 +38,6 @@ const File = ({ blob, name }) => {
       <pre className="File-CodeSection">{blob}</pre>
     </div>
   );
-};
-
-File.propTypes = {
-  blob: PropTypes.arrayOf(PropTypes.string).isRequired,
-  name: PropTypes.string.isRequired,
 };
 
 export default File;

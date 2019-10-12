@@ -1,7 +1,9 @@
-const axios = require('axios');
-const debug = require('debug')('app: ');
+import { Request, Response } from 'express';
+import axios from 'axios';
+import debugInit from 'debug';
+const debug = debugInit('app: ');
 
-const getRepos = async (req, res) => {
+const getRepos = async (req: Request, res: Response) => {
   debug('repos start');
   try {
     const {
@@ -13,7 +15,7 @@ const getRepos = async (req, res) => {
   }
 };
 
-const getRepoStaff = async (req, res) => {
+const getRepoStaff = async (req: Request, res: Response) => {
   const { id, path } = req.params;
   const innerRep = path && path.split('$').join('/');
   try {
@@ -26,7 +28,7 @@ const getRepoStaff = async (req, res) => {
   }
 };
 
-const getFileStaff = async (req, res) => {
+const getFileStaff = async (req: Request, res: Response) => {
   const { id, path } = req.params;
   const innerRep = path && path.split('$').join('/');
   try {
@@ -39,8 +41,4 @@ const getFileStaff = async (req, res) => {
   }
 };
 
-module.exports = {
-  getRepos,
-  getRepoStaff,
-  getFileStaff,
-};
+export { getRepos, getRepoStaff, getFileStaff };

@@ -1,14 +1,14 @@
-const express = require('express');
-const next = require('next');
-const errorDebug = require('debug')('error: ');
+import express, { Request, Response, Errback } from 'express';
+import next from 'next';
+import debugInit from 'debug';
+import { getRepos, getRepoStaff, getFileStaff } from './server_helpers';
 
-const { getRepos, getRepoStaff, getFileStaff } = require('./server_helpers');
-
+const errorDebug = debugInit('error: ');
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
 
-module.exports = async () => {
+export default async () => {
   await nextApp.prepare();
   const expressApp = express();
 
@@ -26,8 +26,8 @@ module.exports = async () => {
     return handle(req, res);
   });
 
-  expressApp.use((err, req, res) => {
-    errorDebug(err.stack);
+  expressApp.use((err: Errback, req: Request, res: Response) => {
+    errorDebug(err);
     res.status(500).send('Something broke!');
   });
 
