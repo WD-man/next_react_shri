@@ -3,10 +3,14 @@ const debug = require('debug')('app: ');
 
 const getRepos = async (req, res) => {
   debug('repos start');
-  const {
-    data: { msg },
-  } = await axios.get('http://localhost:8076/api/repos');
-  res.json(msg);
+  try {
+    const {
+      data: { msg },
+    } = await axios.get('http://localhost:8076/api/repos');
+    res.json(msg);
+  } catch (err) {
+    res.status(500).end();
+  }
 };
 
 const getRepoStaff = async (req, res) => {

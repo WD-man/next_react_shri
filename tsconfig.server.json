@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "module": "esnext",
+    "outDir": ".next/production-server/"
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.js"],
+  "exclude": ["test/**/*.ts"]
+}

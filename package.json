@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run hermione",
+    "tsc": "tsc",
     "hermione": "npx hermione gui ./test/hermione/hermione.test.js",
-    "start": "cross-env DEBUG='server:*' cross-env NODE_ENV=production node ./src/server.js",
-    "build": "cross-env NODE_ENV=production next build",
+    "start": "npm run build && cross-env DEBUG='server:*, rout:*, err:*, app:*' node .next/production-server/server.js",
+    "build": "cross-env NODE_ENV=production next build && tsc --project tsconfig.server.json",
     "lint": "eslint --debug ./",
-    "dev": "cross-env NODE_ENV=development cross-env DEBUG='server:*, app:*, error:*' nodemon ./src/server.js"
+    "dev": "cross-env DEBUG='server:*, rout:*, err:*, app:*' ts-node ./src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "16.9.5",
     "chai": "4.2.0",
     "cross-env": "6.0.3",
     "eslint": "6.5.1",
@@ -32,11 +34,14 @@
     "postcss-import": "12.0.1",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.7.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "ts-node": "8.4.1",
+    "typescript": "3.6.4"
   },
   "dependencies": {
     "@bem-react/classname": "1.5.6",
     "@zeit/next-css": "1.0.1",
+    "@zeit/next-typescript": "1.1.1",
     "axios": "0.19.0",
     "babel-loader": "8.0.6",
     "body-parser": "1.19.0",
