@@ -5,7 +5,7 @@ import { getStaff, getRepos } from '../store/actions';
 
 import Header from '../components/common_blocks/header/header.tsx';
 import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs.tsx';
-import ChooseBranch from '../components/common_blocks/choose-branch/choose-branch';
+import ChooseBranch from '../components/common_blocks/choose-branch/choose-branch.tsx';
 import TabList from '../components/common_blocks/tab-list/tab-list';
 import Repository from '../components/common_blocks/repository/repository';
 
@@ -21,7 +21,7 @@ const Directory = () => {
       <Header current={name} repos={repos} />
       <div className="Page-Content Section_spaceH_xxl">
         <BreadCrumbs isDirectory path={path.split('$')} name={name} />
-        <ChooseBranch name={name} />
+        <ChooseBranch name={name} currentBranch="master" />
         <TabList active="files" tabs={['files', 'branches']} />
         <Repository list={staff} />
       </div>

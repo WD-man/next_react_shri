@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import './__choose_branch.css';
-import ChooseBrancItem from './__item';
+import ChooseBranchItem from './__item';
 
-const ChooseBranch = ({ name, currentBranch }) => {
+interface ChooseBranchProps {
+  name: string,
+  currentBranch: string
+}
+
+const ChooseBranch = ({ name, currentBranch }: ChooseBranchProps) => {
   const [currentItem] = useState(0);
   const [openedList, setOpenedList] = useState(false);
 
@@ -16,9 +20,9 @@ const ChooseBranch = ({ name, currentBranch }) => {
     'ChooseBranch-Header_state_opened': openedList,
   });
 
-  const getBranches = arr => {
+  const getBranches = (arr: string[]) => {
     return arr.map((item, index) => (
-      <ChooseBrancItem key={`br_${item || index}`} active={currentItem === index} />
+      <ChooseBranchItem key={`br_${item || index}`} active={currentItem === index} />
     ));
   };
 
@@ -28,7 +32,6 @@ const ChooseBranch = ({ name, currentBranch }) => {
 
   return (
     <div className="ChooseBranch Section_indentB_s Section_spaceV_m">
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div onClick={click} className={headerClassNames}>
         <span className="ChooseBranch-Title">{name}</span>
         <span className="ChooseBranch-BranchName Text_view_secondary">{currentBranch}</span>
@@ -48,15 +51,6 @@ const ChooseBranch = ({ name, currentBranch }) => {
       </div>
     </div>
   );
-};
-
-ChooseBranch.propTypes = {
-  name: PropTypes.string.isRequired,
-  currentBranch: PropTypes.string,
-};
-
-ChooseBranch.defaultProps = {
-  currentBranch: 'master',
 };
 
 export default ChooseBranch;

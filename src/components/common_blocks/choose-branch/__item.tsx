@@ -1,8 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ChooseBrancItem = ({ active }) => {
+interface ChooseBranchItemProps {
+  active: boolean
+}
+
+const ChooseBranchItem = ({ active }: ChooseBranchItemProps) => {
   const className = classNames('ChooseBranch-Item', 'Section_spaceH_s', 'Section_spaceV_xs', {
     'ChooseBranch-Item_state_active': active,
   });
@@ -17,8 +20,4 @@ const ChooseBrancItem = ({ active }) => {
   );
 };
 
-ChooseBrancItem.propTypes = {
-  active: PropTypes.bool.isRequired,
-};
-
-export default ChooseBrancItem;
+export default ChooseBranchItem;
