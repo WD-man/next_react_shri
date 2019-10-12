@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { getStaff, getRepos } from '../store/actions';
 
 import Header from '../components/common_blocks/header/header.tsx';
-import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs';
+import BreadCrumbs from '../components/common_blocks/bread-crumbs/bread-crumbs.tsx';
 import ChooseBranch from '../components/common_blocks/choose-branch/choose-branch';
 import TabList from '../components/common_blocks/tab-list/tab-list';
 import Repository from '../components/common_blocks/repository/repository';

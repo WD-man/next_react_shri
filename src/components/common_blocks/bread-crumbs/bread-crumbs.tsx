@@ -1,11 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 
 import './bread-crumbs.css';
 
-const BreadCrumbs = ({ path, name, isDirectory }) => {
-  const getLinkPath = index => {
+interface BreadCrumbsProps {
+  path: string[],
+  name: string,
+  isDirectory: boolean
+}
+
+const BreadCrumbs = ({ path, name, isDirectory }: BreadCrumbsProps) => {
+  const getLinkPath = (index: number) => {
     if (path.length === 1) {
       return `/${isDirectory ? 'directory' : 'file'}?name=${name}&path=${path[0]}`;
     }
@@ -13,7 +18,7 @@ const BreadCrumbs = ({ path, name, isDirectory }) => {
       .slice(0, index + 1)
       .join('$')}`;
   };
-  const getPath = arr => {
+  const getPath = (arr: string[]) => {
     return arr.map((item, index, array) => {
       if (array.length === 1 && !array[0]) return '';
       return (
@@ -44,12 +49,6 @@ const BreadCrumbs = ({ path, name, isDirectory }) => {
       {path.length ? getPath(path) : 'text'}
     </div>
   );
-};
-
-BreadCrumbs.propTypes = {
-  path: PropTypes.arrayOf(PropTypes.string).isRequired,
-  isDirectory: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
 };
 
 export default BreadCrumbs;
