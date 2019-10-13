@@ -4,8 +4,8 @@ import classnames from 'classnames';
 import './file.css';
 
 interface FileProps {
-  blob: string,
-  name: string
+  blob: string;
+  name: string;
 }
 
 const File = ({ blob, name }: FileProps) => {

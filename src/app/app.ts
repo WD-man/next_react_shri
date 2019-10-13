@@ -2,6 +2,7 @@ import express, { Request, Response, Errback } from 'express';
 import next from 'next';
 import debugInit from 'debug';
 import { getRepos, getRepoStaff, getFileStaff } from './server_helpers';
+import axios from 'axios';
 
 const errorDebug = debugInit('error: ');
 const dev = process.env.NODE_ENV !== 'production';
@@ -11,6 +12,35 @@ const handle = nextApp.getRequestHandler();
 export default async () => {
   await nextApp.prepare();
   const expressApp = express();
+  expressApp.get('/api/repos/create', async (req, res) => {
+    try {
+      await axios.post('http://localhost:8076/api/repos/js', {
+        url: 'https://github.com/WD-man/js_task.git',
+      });
+      res.set('location', 'http://localhost:8077/');
+      res.status(301);
+      return nextApp.render(req, res, '/index');
+    } catch (err) {
+      console.log('-------------------------');
+      console.log('err', err);
+      console.log('-------------------------');
+      res.status(500).end();
+    }
+  });
+
+  expressApp.get('/api/repos/delete', async (req, res) => {
+    try {
+      await axios.delete('http://localhost:8076/api/repos/js');
+      res.set('location', 'http://localhost:8077/');
+      res.status(301);
+      return nextApp.render(req, res, '/index');
+    } catch (err) {
+      console.log('-------------------------');
+      console.log('e', err);
+      console.log('-------------------------');
+      res.status(500).end();
+    }
+  });
 
   expressApp.get('/api/repos', getRepos);
 

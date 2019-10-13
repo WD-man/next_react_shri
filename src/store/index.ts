@@ -1,15 +1,14 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import immutable from 'seamless-immutable';
-import reposReducer from './repos';
-import staffReducer from './staff';
-import pathReducer from './path';
-import blobReducer from './blob';
+import reposReducer from './repos/repos';
+import staffReducer from './staff/staff';
+import pathReducer from './path/path';
+import blobReducer from './blob/blob';
 
-const initialState = immutable({
-  repos: [],
-});
+const initialState = {
+  repos: []
+};
 
 const rootReducer = combineReducers({
   repos: reposReducer,
@@ -17,6 +16,8 @@ const rootReducer = combineReducers({
   path: pathReducer,
   blob: blobReducer,
 });
+
+export type State = ReturnType<typeof rootReducer>;
 
 export default (preloadedState = initialState) => {
   return createStore(rootReducer, preloadedState, composeWithDevTools(applyMiddleware(thunk)));

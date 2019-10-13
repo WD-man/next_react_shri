@@ -3,8 +3,10 @@
   "compilerOptions": {
     "target": "ES5",
     "noEmit": false,
-    "module": "esnext",
+    "allowJs": true,
+    "module": "commonjs",
     "outDir": ".next/production-server/",
+    "esModuleInterop": true,
     "lib": [
       "es2019"
     ]

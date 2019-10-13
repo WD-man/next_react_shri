@@ -7,10 +7,10 @@
     "test": "npm run hermione",
     "tsc": "tsc",
     "hermione": "npx hermione gui ./test/hermione/hermione.test.js",
-    "start": "npm run build && cross-env DEBUG='server:*, rout:*, err:*, app:*' node ./.next/production-server/server.js",
+    "start": "npm run build && cross-env NODE_ENV=production cross-env DEBUG='server:*, rout:*, err:*, app:*' node ./.next/production-server/server.js",
     "build": "cross-env NODE_ENV=production next build && tsc --project tsconfig.server.json",
     "lint": "eslint --debug ./",
-    "dev": "cross-env DEBUG='server:*, rout:*, err:*, app:*' ts-node src/server.ts"
+    "dev": "cross-env DEBUG='server:*, rout:*, err:*, app:*' ts-node-dev --respawn --transpileOnly --project tsconfig.server.json ./src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "@types/debug": "4.1.5",
     "@types/express": "4.17.1",
     "@types/react": "16.9.5",
+    "@types/react-redux": "7.1.4",
     "chai": "4.2.0",
     "cross-env": "6.0.3",
     "eslint": "6.5.1",
@@ -39,6 +40,7 @@
     "postcss-preset-env": "6.7.0",
     "prettier": "1.18.2",
     "ts-node": "8.4.1",
+    "ts-node-dev": "1.0.0-pre.43",
     "typescript": "3.6.4"
   },
   "dependencies": {
